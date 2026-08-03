@@ -1,0 +1,57 @@
+
+:root{
+    --body-bg-color: #1f243e;
+    --font-color: #fff;
+    --Tools-Panel:#6908e0;
+    --radius : 25px;
+    --border-color : #fff;
+    --CV_Page:#fff;
+    --CV_Width : 700px;
+    --CV_Height : 900px;
+    --Title-border : #05ffb0;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--body-bg-color);
+    color: var(--font-color);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    color: var(--font-color);
+    justify-content: center;
+    align-items: center;
+    max-width: 2500px;
+}
+
+.flow {
+    display: block;
+    gap:1.3rem;
+}
+.title {
+    margin: 30px;
+    border-bottom: 3px solid var(--Title-border);
+    padding: 15px;
+}
+.Layout {
+    display:grid;
+grid-template-columns: 350px 1fr;
+gap : 0.8rem;
+}
+.ToolsPanel
+{
+    display: flex;
+    background-color: var(--Tools-Panel);
+    gap: 1.5rem;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: var(--radius);
+}
+.Page{
+    width: var(--CV_Width);
+    height: var(--CV_Height);
+    background-color: var(--CV_Page);
+    border-radius: var(--radius);
+}
