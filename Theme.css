@@ -6,8 +6,8 @@
     --radius : 25px;
     --border-color : #fff;
     --CV_Page:#fff;
-    --CV_Width : 700px;
-    --CV_Height : 1200px;
+    --CV_Width : 850px;
+    --CV_Height : 2000px;
     --Title-border : #05ffb0;
     --Container-bg : hsla(279, 100%, 50%, 0.315);
     --button-color : #4b00cd;
@@ -273,7 +273,7 @@ display: flex;
 .CV_Content {
     position: relative;
     display: grid;
-    grid-template-columns: 220px 420px;
+    grid-template-columns: 220px 60%;
     gap:0.8rem;
 }
 
