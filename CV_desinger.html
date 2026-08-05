@@ -99,16 +99,14 @@
             autocomplete="off"
           />
           <!-- HTML Structure -->
-           <label for="ice-cream">Choose your level</label>
-<div class="combo-wrapper">
-  
-  <input type="text" id="ice-cream" name="ice-cream" list="flavors" class="combo-input" placeholder="Select or type..." />
-  <datalist id="flavors">
-    <option value="Beginner"></option>
-    <option value="Intermediate"></option>
-    <option value="Advanced"></option>
-  </datalist>
-</div>
+           <label>Choose your level</label>
+<select id="dropdown">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate" selected>Intermediate</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Fluent">Fluent</option>
+        <option value="Native">Native</option>
+    </select>
             <button >+ Add language</button>
           </div>
             </div>
