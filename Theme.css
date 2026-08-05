@@ -2,13 +2,16 @@
 :root{
     --body-bg-color: #1f243e;
     --font-color: #fff;
-    --Tools-Panel:#6908e0;
+    --Tools-Panel:#060079;
     --radius : 25px;
     --border-color : #fff;
     --CV_Page:#fff;
     --CV_Width : 700px;
     --CV_Height : 900px;
     --Title-border : #05ffb0;
+    --Container-bg : hsla(279, 100%, 50%, 0.315);
+    --button-color : #4b00cd;
+    --button-hover : #c700f9;
 }
 
 * { 
@@ -18,7 +21,7 @@
 body {
     background-color: var(--body-bg-color);
     color: var(--font-color);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI';
     display: flex;
     color: var(--font-color);
     justify-content: center;
@@ -48,10 +51,152 @@ gap : 0.8rem;
     flex-direction: column;
     border: 2px solid white;
     border-radius: var(--radius);
+    flex-wrap: wrap;
+   
 }
 .Page{
+    position: sticky;
+    top:20px;
     width: var(--CV_Width);
     height: var(--CV_Height);
     background-color: var(--CV_Page);
     border-radius: var(--radius);
+}
+.Container {
+    position: relative;
+    width: 90%;
+display: flex;
+flex-direction:row;
+flex-wrap: wrap;
+font-weight: bold;
+background-color: var(--Container-bg);
+font-size: 17px;
+padding: 10px;
+color: var(--font-color);
+border: 1px solid white;
+    border-radius: var(--radius);
+    margin: 10px auto 5px;
+    align-items: center;
+    justify-content: center;
+}
+.Container .Title {
+    
+ font-size: 20px;
+ font-weight: 700;
+ margin: 20px;
+}
+
+/* ✅ Shared styles for inputs */
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid rgb(255, 255, 255);
+        background: rgba(246, 244, 244, 0.35);
+        color: #e9eefc;
+        padding: 10px 12px;
+        outline: none;
+        font-size: 14px;
+        padding: 12px;
+        margin: 12px;
+      }
+input::placeholder
+{
+    color: #ffffff;
+}
+textarea::placeholder
+{
+    color: #ffffff;
+}
+      textarea {
+        resize: vertical; /* ✅ allow user to resize vertically only */
+        min-height: 70px;
+      }
+
+      /* ✅ Highlight focused input */
+      input:focus,
+      textarea:focus {
+        border-color: rgb(237, 237, 237);
+      }
+
+      /* ✅ File input looks better with padding too */
+      input[type="file"] {
+        padding: 10px 12px;
+      }
+label {
+    display: block;
+    margin: 10px;
+}
+
+.Button_Container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.Button_Container input
+{
+    width: 80%;
+        
+}
+button {
+    padding: 0.8rem 1.2rem;
+    background-color: var(--button-color);
+    color : var(--font-color);
+    font-size: 12px;
+    font-weight: 700;
+    margin: 10px;
+    border-radius: 12px;
+        border: 1px solid rgb(255, 255, 255);
+}
+button:hover {
+    background-color: var(--button-hover);
+
+}
+
+/* Container Layout */
+.combo-wrapper {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+}
+
+/* Label Styling */
+.combo-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input Field Styling */
+.combo-input {
+  width: 100%;
+  padding: 10px 35px 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box;
+  
+  /* Custom drop-down arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 10px auto;
+}
+
+/* Interactive States */
+.combo-input:hover {
+  border-color: #888;
+}
+
+.combo-input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+  outline: none;
 }
