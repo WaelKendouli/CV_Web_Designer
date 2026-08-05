@@ -14,7 +14,7 @@
     --button-hover : #c700f9;
     --Cv_Header : #5101fec6;
     --Cv_Header_font_color : #fbfbfb;
-
+--muted : #ffffffae;
 }
 
 * { 
@@ -225,12 +225,36 @@ font-weight: bold;
     grid-template-columns: repeat(2,1fr);
     gap:10px;
 }
-
+.Hedear_Informaton {
+    width: 100%;
+    display:block;
+    
+}
 
 .CV_header  h1 {
     position: relative;
     font-size: 30px;
-    padding-left: 30px;
+    margin-bottom: 3px;
+
+}
+.CV_header  .position {
+    position: relative;
+    font-size: 18px;
+    margin: 3px;
+    color: var(--muted);
+}
+.CV_header  p {
+
+    font-size: 18px;
+    margin: 3px;
+    color: white;
+}
+.CV_header  .IconInfo {
+display: inline-flex;
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    gap:5px;
 }
 
 .CV_Content {
@@ -239,3 +263,19 @@ font-weight: bold;
     grid-template-columns: 120px 1fr;
     gap:0.8rem;
 }
+
+.icon-simple {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+            margin: 20px;
+        }
+        
+        .icon-simple:hover {
+            transform: scale(1.1);
+            border-color: #009dff;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
