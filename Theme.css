@@ -7,7 +7,7 @@
     --border-color : #fff;
     --CV_Page:#fff;
     --CV_Width : 850px;
-    --CV_Height : 2000px;
+    --CV_Height : 1500px;
     --Title-border : #05ffb0;
     --Container-bg : hsla(279, 100%, 50%, 0.315);
     --button-color : #4b00cd;
@@ -322,12 +322,22 @@ display: flex;
             font-size: 20px;
             padding: 10px;
         }
-        .Inf_Container p {
+        .Inf_Container p  {
             color: var(--Info_Section_muted);
             font-size: 16px;
             font-weight: 400;
         }
-
+        .Inf_Container ul {
+            color: var(--Info_Section_muted);
+            font-size: 16px;
+            font-weight: bold;
+        }
+.Inf_Container li {
+            color: var(--Info_Section_muted);
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+        }
 .Details {
     display: block;
     margin: 10px;
