@@ -7,7 +7,7 @@
     --border-color : #fff;
     --CV_Page:#fff;
     --CV_Width : 700px;
-    --CV_Height : 900px;
+    --CV_Height : 1200px;
     --Title-border : #05ffb0;
     --Container-bg : hsla(279, 100%, 50%, 0.315);
     --button-color : #4b00cd;
@@ -250,13 +250,20 @@ font-weight: bold;
     color: white;
 }
 .CV_header  .IconInfo {
-display: inline-flex;
+display: flex;
     font-size: 18px;
     padding: 10px;
     color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 10px;
     gap:5px;
 }
 
+.CV_header  svg {
+    fill: white;
+}
 .CV_Content {
     position: relative;
     display: grid;
@@ -264,9 +271,18 @@ display: inline-flex;
     gap:0.8rem;
 }
 
+.Avatar_container {
+    display: flex;
+    position: relative;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .icon-simple {
-            width: 90px;
-            height: 90px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #ddd;
