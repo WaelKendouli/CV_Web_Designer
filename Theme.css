@@ -17,6 +17,8 @@
 --muted : #ffffffae;
 --Info_Section_muted : #0a0909c5;
 --Info_section_Border_color : #393939; 
+--Main_Section_color: black;
+--Line : #7a00bc;
 }
 
 * { 
@@ -271,7 +273,7 @@ display: flex;
 .CV_Content {
     position: relative;
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 220px 420px;
     gap:0.8rem;
 }
 
@@ -325,3 +327,59 @@ display: flex;
             font-size: 16px;
             font-weight: 400;
         }
+
+.Details {
+    display: block;
+    margin: 10px;
+}
+
+.Main_Section {
+    display: block;
+    position: relative;
+    margin: 10px;
+    width:100%;
+    color: var(--Main_Section_color);
+}
+.Main_Section h2 {
+   position : relative; 
+font-size: 25px;
+border-bottom: 3px solid var(--Line);
+padding: 8px;
+}
+
+
+
+.Section {
+display: block;
+border: 1px solid  var(--muted);
+border-radius: var(--radius);
+margin: 5px;
+margin-top: 0px;
+}
+
+.SectionTitle {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+    gap : 10px;
+}
+ .Muted {
+    display: inline-flex;
+    color: #7a00bc;
+    font-weight: 500;
+    font-size: 12px;
+    gap:10px;
+}
+
+.Section ul {
+margin-left: 10px;
+margin-top: 0px;
+}
+.Section li {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
