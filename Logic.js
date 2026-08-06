@@ -10,7 +10,9 @@ const InputsUI = {
  AboutMe : document.getElementById('InpAboutMe'),
  Profile : document.getElementById('InpProfile'),
  Skills : document.getElementById('InpSkills'),
- TechTools : document.getElementById('InpTechTools')
+ TechTools : document.getElementById('InpTechTools'),
+ ddLanguageLevel : document.getElementById('Leveldropdown'),
+ Language : document.getElementById('InpLanguage')
 }
 
 
@@ -28,7 +30,8 @@ const UIElements = {
     elLanguages : document.getElementById('languagesList'),
 elTechTools : document.getElementById('elTechToolsList'),
 elSkills : document.getElementById('elSkillsList'),
-
+elLanguages : document.getElementById('languagesList'),
+LangProtoText : document.getElementById('elProtoMessage')
 }
 
 const Buttons = {
@@ -83,8 +86,19 @@ if (inputElement.value.trim() === '') {
 let item = document.createElement('li');
 item.textContent = inputElement.value;
 listElement.appendChild(item);
+inputElement.value = '';
 }
 
+function AddLanguage(listLanguage, inputElement , dropdownElement) {
+if (inputElement.value.trim() === '') {
+    return;
+}
+UIElements.LangProtoText.style.display = 'none';
+let item = document.createElement('li');
+item.textContent = inputElement.value + ' - ' + dropdownElement.value;
+listLanguage.appendChild(item);
+inputElement.value = '';
+}
 
 InputsUI.fullName.addEventListener('input' , () => {
     Update_UI(UIElements.userName, InputsUI.fullName);
@@ -118,4 +132,7 @@ Buttons.btnaddSkill.addEventListener('click', () => {
 });
 Buttons.btnaddTechTool.addEventListener('click', () => {
     AddNewItemToList(UIElements.elTechTools, InputsUI.TechTools);
+});
+Buttons.btnaddLanguage.addEventListener('click', () => {
+    AddLanguage(UIElements.elLanguages, InputsUI.Language, InputsUI.ddLanguageLevel);
 });

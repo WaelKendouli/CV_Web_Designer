@@ -49,6 +49,7 @@ body {
     display:grid;
 grid-template-columns: 350px 1fr;
 gap : 0.8rem;
+max-width: 2500px;
 }
 .ToolsPanel
 {
