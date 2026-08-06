@@ -78,26 +78,35 @@
               <p class="Title">More Information</p>
 <label >About me :</label>
           <textarea
-            id="serial"
+            id="InpAboutMe"
             placeholder="Type your description ..."
             autocomplete="off"
           ></textarea>
           <label >Profile :</label>
           <textarea
-            id="serial"
+            id="InpProfile"
             placeholder="Type your profile ..."
             autocomplete="off"
           ></textarea>
           <div class="Button_Container">
             <label >Skills :</label>
           <input
-            id="serial"
+            id="InpSkills"
             type="text"
             placeholder="Type your Skill ..."
             autocomplete="off"
           />
-            <button >+ Add skill</button>
+            <button id="btnAddSkill">+ Add skill</button>
+            
           </div>
+          <label >Technologies :</label>
+          <input
+            id="InpTechTools"
+            type="text"
+            placeholder="Type your Technology ..."
+            autocomplete="off"
+          />
+            <button id="btnAddTechTool">+ Add technology</button>
             </div>
 
             <div class="Container">
@@ -235,7 +244,7 @@
         <option value="Fluent">Fluent</option>
         <option value="Native">Native</option>
     </select>
-            <button >+ Add language</button>
+            <button id="btnAddLanguage">+ Add language</button>
           </div>
             </div>
 
@@ -289,30 +298,28 @@
                 <div class="Info_Section">
                   <div class="Inf_Container">
                     <h2>About me</h2>
-                    <p>this is a simple description about yourself.</p>
+                    <p id="elAboutMe">this is a simple description about yourself.</p>
                   </div>
                     <div class="Inf_Container">
                     <h2>Profile</h2>
-                    <p>Short professional summary in 3–5 lines. Mention your years of experience, strongest skills, and the impact you create. Use specific, quantifiable achievements where possible.</p>
+                    <p id="elProfile">Short professional summary in 3–5 lines. Mention your years of experience, strongest skills, and the impact you create. Use specific, quantifiable achievements where possible.</p>
                   </div>
                   <div class="Inf_Container">
                     <h2>Languages</h2>
-                    <p>List the languages you speak and your proficiency level in each.</p>
-                  </div>
-                  <div class="Inf_Container">
-                    <h2>Tech & tools</h2>
-                    <ul>
-                      <li>HTML, CSS, JavaScript</li>
-                      <li>React, Vue.js</li>
-                      <li>Git, Docker</li>
+                    <p id="elProtoMessage">List the languages you speak and your proficiency level in each.</p>
+                    <ul id="languagesList">
+            
                     </ul>
                   </div>
                   <div class="Inf_Container">
-                    <h2>Interests</h2>
-                    <ul>
-                      <li>Web Development</li>
-                      <li>Open Source</li>
-                      <li>Machine Learning</li>
+                    <h2>Tech & tools</h2>
+                    <ul id="elTechToolsList">
+                    </ul>
+                  </div>
+                  <div class="Inf_Container">
+                    <h2>Skills</h2>
+                    <ul id="elSkillsList">
+                      
                     </ul>
                   </div>
                 </div>
