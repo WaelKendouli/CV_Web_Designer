@@ -37,8 +37,10 @@ body {
 }
 
 .flow {
-    display: block;
-    gap:1.3rem;
+      display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%; /* Ensure it takes full width */
 }
 .title {
     margin: 30px;
@@ -267,7 +269,10 @@ display: flex;
     margin: 10px;
     gap:5px;
 }
-
+.IconInfo a {
+    font-weight: bold;
+    color: white;
+}
 .CV_header  svg {
     fill: white;
 }
@@ -398,4 +403,141 @@ margin-top: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+@media print {
+    /* Hide only the tools panel and controls */
+    .ToolsPanel {
+        display: none !important;
+    }
+    
+    .title {
+        display: none !important;
+    }
+    
+    .Container {
+        display: none !important;
+    }
+    
+    /* Keep the layout exactly as is */
+    .Layout {
+        display: grid !important;
+        grid-template-columns: repeat(1,1fr) !important;
+        gap: 0.8rem !important;
+        max-width: 2500px !important;
+        margin: 0 auto;
+    }
+    
+    .Page {
+        position: sticky !important;
+        top: 20px !important;
+        width: var(--CV_Width) !important;
+        height: var(--CV_Height) !important;
+        background-color: var(--CV_Page) !important;
+        border-radius: var(--radius) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        box-shadow: none !important;
+    }
+    
+    /* Keep grid layouts */
+    .CV_Content {
+        display: grid !important;
+        grid-template-columns: 220px 75% !important;
+        gap: 0.8rem !important;
+    }
+    
+    .Header_Layout {
+        display: grid !important;
+        grid-template-columns: 220px 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .Info_Section {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 1.3rem !important;
+        flex-direction: column !important;
+    }
+    
+    .CV_header {
+        background-color: var(--Cv_Header) !important;
+        color: var(--Cv_Header_font_color) !important;
+    }
+    
+    .CV_header .position {
+        color: var(--muted) !important;
+    }
+    
+    .CV_header p {
+        color: white !important;
+    }
+    
+    .CV_header .IconInfo {
+        color: white !important;
+    }
+    
+    .CV_header svg {
+        fill: white !important;
+    }
+    
+    .icon-simple {
+        width: 150px !important;
+        height: 150px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 2px solid #ddd !important;
+        margin: 20px !important;
+    }
+    
+    /* Keep font colors */
+    .Inf_Container h2 {
+        color: var(--Info_Section_muted) !important;
+    }
+    
+    .Inf_Container p {
+        color: var(--Info_Section_muted) !important;
+    }
+    
+    .Inf_Container ul {
+        color: var(--Info_Section_muted) !important;
+    }
+    
+    .Inf_Container li {
+        color: var(--Info_Section_muted) !important;
+    }
+    
+    .Main_Section {
+        color: var(--Main_Section_color) !important;
+    }
+    
+    .Section li {
+        color: black !important;
+    }
+    
+    /* Prevent page breaks inside CV sections */
+    .CV_header {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .Inf_Container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .Section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* Fix body for print */
+    body {
+        background-color: white !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        min-height: 100vh !important;
+    }
 }
