@@ -191,33 +191,20 @@
 </div>
 
 <div class="Container">
-              <p class="Title">Certifications</p>
-<label >Certification :</label>
-          <textarea
-            id="serial"
-            placeholder="Type your certification ..."
-            autocomplete="off"
-          ></textarea>
-         
-
-            <label >Platform :</label>
-          <input
-            id="serial"
-            type="text"
-            placeholder="Type your Platform ..."
-            autocomplete="off"
-          />
-           <label >Date :</label>
-          <input
-            id="serial"
-            type="Date"
-            placeholder="Type your Date ..."
-            autocomplete="off"
-          />
-          <div class="Button_Container">
-            <button >+ Add Certification</button>
-          </div>
-            </div>
+  <p class="Title">Certifications</p>
+  <label>Certification :</label>
+  <input id="certName" placeholder="Type your certification ..." autocomplete="off"/>
+  
+  <label>Platform :</label>
+  <input id="certPlatform" type="text" placeholder="Type your Platform ..." autocomplete="off"/>
+  
+  <label>Date :</label>
+  <input id="certDate" type="date" placeholder="Type your Date ..." autocomplete="off"/>
+  
+  <div class="Button_Container">
+    <button id="addCertificationBtn">+ Add Certification</button>
+  </div>
+</div>
 
             <div class="Container">
               <p class="Title">Additional Informations</p>
@@ -358,29 +345,10 @@
 </div>
 
 
-                  <div class="Main_Section">
-                    <h2>Certifications</h2>
-                    <div class="Section">
-                      <div class="SectionTitle">
-                      <p>Certification Name</p>
-                      <span class="Muted">
-                      <p>Platform Name</p>
-                      <p>Time Period</p>
-                      </span>
-                      </div>
+                  
+                    <div id="certificationContainer" class="Main_Section">
+              <h2>Certifications</h2>
                     </div>
-                   <div class="Section">
-                      <div class="SectionTitle">
-                      <p>Certification Name</p>
-                      <span class="Muted">
-                      <p>Platform Name</p>
-                      <p>Time Period</p>
-                      </span>
-                      </div>
-                    </div>
-                  </div>
-
-
                 </div>
             </div>
           </div>

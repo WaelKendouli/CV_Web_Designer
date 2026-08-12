@@ -26,7 +26,11 @@ eduDegree: document.getElementById('eduDegree'),
     eduLocation: document.getElementById('eduLocation'),
     eduStartDate: document.getElementById('eduStartDate'),
     eduEndDate: document.getElementById('eduEndDate'),
-    eduDetails: document.getElementById('eduDetails')
+    eduDetails: document.getElementById('eduDetails'),
+
+    certName: document.getElementById('certName'),
+    certPlatform: document.getElementById('certPlatform'),
+    certDate: document.getElementById('certDate')
 }
 
 
@@ -56,7 +60,9 @@ const Buttons = {
     addExperienceBtn : document.getElementById('addExperienceBtn'),
     addDetailJobBtn : document.getElementById('addDetailBtn'),
     addEduDetailBtn: document.getElementById('addEduDetailBtn'),
-    addEducationBtn: document.getElementById('addEducationBtn')
+    addEducationBtn: document.getElementById('addEducationBtn'),
+    addCertificationBtn: document.getElementById('addCertificationBtn')
+
 
 }
 
@@ -242,7 +248,42 @@ function AddEducation() {
     InputsUI.eduEndDate.value = '';
 }
 
+function AddCertification() {
+    const certName = InputsUI.certName.value.trim();
+    const platform = InputsUI.certPlatform.value.trim();
+    const date = InputsUI.certDate.value.trim();
+    const certContainer = document.getElementById('certificationContainer');
 
+    const certDiv = document.createElement('div');
+    certDiv.className = 'Section';
+    
+    const TitleSect = document.createElement('div');
+    TitleSect.className = 'SectionTitle';
+    
+    const Title = document.createElement('p');
+    Title.textContent = certName || 'Certification';
+    
+    const spnInfos = document.createElement('span');
+    spnInfos.className = 'Muted';
+    
+    const Platform = document.createElement('p');
+    Platform.textContent = platform;
+    const Date = document.createElement('p');
+    Date.textContent = date;
+    
+    spnInfos.appendChild(Platform);
+    spnInfos.appendChild(Date);
+    
+    TitleSect.appendChild(Title);
+    TitleSect.appendChild(spnInfos);
+    certDiv.appendChild(TitleSect);
+    certContainer.appendChild(certDiv);
+
+    // Clear inputs
+    InputsUI.certName.value = '';
+    InputsUI.certPlatform.value = '';
+    InputsUI.certDate.value = '';
+}
 
 InputsUI.fullName.addEventListener('input' , () => {
     Update_UI(UIElements.userName, InputsUI.fullName);
@@ -291,3 +332,4 @@ Buttons.addEducationBtn.addEventListener('click', AddEducation);
 Buttons.addEduDetailBtn.addEventListener('click',() => {
     AddDetalisList('ulEduDetailsList' , 'EduDetail', InputsUI.eduDetails.value.trim());
 });
+Buttons.addCertificationBtn.addEventListener('click' , AddCertification);
