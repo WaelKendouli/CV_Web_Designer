@@ -30,7 +30,13 @@ eduDegree: document.getElementById('eduDegree'),
 
     certName: document.getElementById('certName'),
     certPlatform: document.getElementById('certPlatform'),
-    certDate: document.getElementById('certDate')
+    certDate: document.getElementById('certDate'),
+
+        projectName: document.getElementById('projectName'),
+    projectOrg: document.getElementById('projectOrg'),
+    projectYear: document.getElementById('projectYear'),
+    projectDetails: document.getElementById('projectDetails'),
+    isProjectLink: document.getElementById('isProjectLinkCheckbox')
 }
 
 
@@ -61,8 +67,10 @@ const Buttons = {
     addDetailJobBtn : document.getElementById('addDetailBtn'),
     addEduDetailBtn: document.getElementById('addEduDetailBtn'),
     addEducationBtn: document.getElementById('addEducationBtn'),
-    addCertificationBtn: document.getElementById('addCertificationBtn')
+    addCertificationBtn: document.getElementById('addCertificationBtn'),
 
+    addProjectDetailBtn: document.getElementById('addProjectDetailBtn'),
+    addProjectBtn: document.getElementById('addProjectBtn')
 
 }
 
@@ -190,6 +198,37 @@ li.textContent = value;
 ul.appendChild(li);
 }
 
+function AddProjectDetail() {
+    const detailValue = InputsUI.projectDetails.value.trim();
+    if (detailValue === '') return;
+    
+    const ul = document.getElementById('ulProjectDetailsList');
+    const li = document.createElement('li');
+    li.className = 'ProjectDetail';
+    
+    if (InputsUI.isProjectLink.checked) {
+        const link = document.createElement('a');
+        link.href = detailValue;
+        link.target = '_blank';
+        link.textContent = 'Link to Project';
+        li.appendChild(link);
+        
+        // Also store the URL as a data attribute for later use
+        li.dataset.linkUrl = detailValue;
+    } else {
+        // Regular text
+        li.textContent = detailValue;
+    }
+    
+    // Make it removable on click
+    li.addEventListener('click', function() { 
+        this.remove(); 
+    });
+    
+    ul.appendChild(li);
+    InputsUI.projectDetails.value = '';
+    InputsUI.isProjectLink.checked = false; // Reset checkbox
+}
 
 function AddEducation() {
     const degree = InputsUI.eduDegree.value.trim();
@@ -285,6 +324,71 @@ function AddCertification() {
     InputsUI.certDate.value = '';
 }
 
+function AddProject() {
+    const projectName = InputsUI.projectName.value.trim();
+    const org = InputsUI.projectOrg.value.trim();
+    const year = InputsUI.projectYear.value.trim();
+    const projectContainer = document.getElementById('projectContainer');
+
+    const projectDiv = document.createElement('div');
+    projectDiv.className = 'Section';
+    
+    const TitleSect = document.createElement('div');
+    TitleSect.className = 'SectionTitle';
+    
+    const Title = document.createElement('p');
+    Title.textContent = projectName || 'Project';
+    
+    const spnInfos = document.createElement('span');
+    spnInfos.className = 'Muted';
+    
+    const Org = document.createElement('p');
+    Org.textContent = org || 'Self-Taught';
+    const Year = document.createElement('p');
+    Year.textContent = year || 'Year';
+    
+    spnInfos.appendChild(Org);
+    spnInfos.appendChild(Year);
+    
+    TitleSect.appendChild(Title);
+    TitleSect.appendChild(spnInfos);
+    projectDiv.appendChild(TitleSect);
+
+    // Get all project details and add them
+    const projectDetails = document.querySelectorAll('.ProjectDetail');
+    const ul = document.createElement('ul');
+    projectDetails.forEach((li) => {
+        let item = document.createElement('li');
+        
+        // Check if the detail was a link (has link data attribute)
+        if (li.dataset.linkUrl) {
+            const link = document.createElement('a');
+            link.href = li.dataset.linkUrl;
+            link.target = '_blank';
+            link.textContent = 'Link to Project';
+            item.appendChild(link);
+        } else {
+            item.textContent = li.textContent;
+        }
+        
+        ul.appendChild(item);
+    });
+    projectDiv.appendChild(ul);
+    projectContainer.appendChild(projectDiv);
+
+    // Remove the detail items from the list
+    projectDetails.forEach((li) => {
+        li.remove();
+    });
+
+    // Clear inputs
+    InputsUI.projectName.value = '';
+    InputsUI.projectOrg.value = '';
+    InputsUI.projectYear.value = '';
+    InputsUI.isProjectLink.checked = false;
+}
+
+
 InputsUI.fullName.addEventListener('input' , () => {
     Update_UI(UIElements.userName, InputsUI.fullName);
 });
@@ -333,3 +437,6 @@ Buttons.addEduDetailBtn.addEventListener('click',() => {
     AddDetalisList('ulEduDetailsList' , 'EduDetail', InputsUI.eduDetails.value.trim());
 });
 Buttons.addCertificationBtn.addEventListener('click' , AddCertification);
+
+Buttons.addProjectDetailBtn.addEventListener('click', AddProjectDetail);
+Buttons.addProjectBtn.addEventListener('click', AddProject);

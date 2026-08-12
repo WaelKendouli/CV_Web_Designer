@@ -74,6 +74,35 @@
   autocomplete="off"
 />
           </div>
+          <div class="Container">
+  <p class="Title">Projects</p><br/>
+  
+  <label>Project Name :</label>
+  <input id="projectName" placeholder="Type your project name ..." autocomplete="off"/>
+  
+  <label>Organization/Company :</label>
+  <input id="projectOrg" placeholder="Type organization name ..." autocomplete="off"/>
+  
+  <label>Year :</label>
+  <input id="projectYear" type="text" placeholder="Type the year ..." autocomplete="off"/>
+  
+  <label>Detail/Description :</label>
+  <textarea id="projectDetails" placeholder="Type your project detail ..." autocomplete="off"></textarea>
+  
+  <div class="Checkbox_Container">
+    <label>
+      This detail is a link
+    </label>
+    <input type="checkbox" id="isProjectLinkCheckbox" />
+  </div>
+  
+  <ul id="ulProjectDetailsList"></ul>
+  
+  <div class="Button_Container">
+    <button id="addProjectDetailBtn">+ Add Detail</button>
+    <button id="addProjectBtn">+ Add Project</button>
+  </div>
+</div>
             <div class="Container">
               <p class="Title">More Information</p>
 <label >About me :</label>
@@ -310,35 +339,10 @@
                     <h2>Experience</h2>
                   </div>
 
-                  <div class="Main_Section">
-                    <h2>Selected Projects</h2>
-                    <div class="Section">
-                      <div class="SectionTitle">
-                      <p>DVLD management project</p>
-                      <span class="Muted">
-                      <p>Self-thaught</p>
-                      <p>2025</p>
-                      </span>
-                      </div>
-                      <ul>
-                        <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
-                        <li><a href="#" target="_blank">Link to Project</a></li>
-                        </ul>
-                    </div>
-                   <div class="Section">
-                      <div class="SectionTitle">
-                      <p>Book Library management API</p>
-                      <span class="Muted">
-                      <p>Self-thaught</p>
-                      <p>2025</p>
-                      </span>
-                      </div>
-                      <ul>
-                        <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
-                        <li><a href="#" target="_blank">Link to Project</a></li>
-                        </ul>
-                    </div>
-                  </div>
+                <div id="projectContainer" class="Main_Section">
+  <h2>Selected Projects</h2>
+</div>
+
 
                   <div id="educationContainer" class="Main_Section">
     <h2>Education</h2>

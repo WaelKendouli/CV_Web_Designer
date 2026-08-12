@@ -274,7 +274,7 @@ display: flex;
 .CV_Content {
     position: relative;
     display: grid;
-    grid-template-columns: 220px 60%;
+    grid-template-columns: 220px 75%;
     gap:0.8rem;
 }
 
@@ -393,4 +393,9 @@ margin-top: 0px;
     color: black;
     font-weight: bold;
     font-size: 14px;
+}
+.Checkbox_Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
