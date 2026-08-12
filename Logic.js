@@ -19,7 +19,14 @@ const InputsUI = {
   location: document.getElementById('location'),
   startDate: document.getElementById('startDate'),
   endDate: document.getElementById('endDate'),
-jobDetails : document.getElementById('jobDetails')
+jobDetails : document.getElementById('jobDetails'),
+
+eduDegree: document.getElementById('eduDegree'),
+    eduUniversity: document.getElementById('eduUniversity'),
+    eduLocation: document.getElementById('eduLocation'),
+    eduStartDate: document.getElementById('eduStartDate'),
+    eduEndDate: document.getElementById('eduEndDate'),
+    eduDetails: document.getElementById('eduDetails')
 }
 
 
@@ -47,7 +54,9 @@ const Buttons = {
     btnaddLanguage : document.getElementById('btnAddLanguage'),
     btnaddTechTool : document.getElementById('btnAddTechTool'),
     addExperienceBtn : document.getElementById('addExperienceBtn'),
-    addDetailJobBtn : document.getElementById('addDetailBtn')
+    addDetailJobBtn : document.getElementById('addDetailBtn'),
+    addEduDetailBtn: document.getElementById('addEduDetailBtn'),
+    addEducationBtn: document.getElementById('addEducationBtn')
 
 }
 
@@ -175,6 +184,66 @@ li.textContent = value;
 ul.appendChild(li);
 }
 
+
+function AddEducation() {
+    const degree = InputsUI.eduDegree.value.trim();
+    const university = InputsUI.eduUniversity.value.trim();
+    const location = InputsUI.eduLocation.value.trim();
+    const startDate = InputsUI.eduStartDate.value.trim();
+    const endDate = InputsUI.eduEndDate.value.trim();
+    const educationContainer = document.getElementById('educationContainer');
+
+    const educationDiv = document.createElement('div');
+    educationDiv.className = 'Section';
+    
+    const TitleSect = document.createElement('div');
+    TitleSect.className = 'SectionTitle';
+    
+    const Title = document.createElement('p');
+    Title.textContent = degree || 'Education';
+    
+    const spnInfos = document.createElement('span');
+    spnInfos.className = 'Muted';
+    
+    const University = document.createElement('p');
+    University.textContent = university;
+    const Location = document.createElement('p');
+    Location.textContent = location;
+    const Period = document.createElement('p');
+    Period.textContent = `from ${startDate} to ${endDate}`;
+    
+    spnInfos.appendChild(University);
+    spnInfos.appendChild(Location);
+    spnInfos.appendChild(Period);
+    
+    TitleSect.appendChild(Title);
+    TitleSect.appendChild(spnInfos);
+    educationDiv.appendChild(TitleSect);
+
+    const eduDetails = document.querySelectorAll('.EduDetail');
+    const ul = document.createElement('ul');
+    eduDetails.forEach((li) => {
+        let item = document.createElement('li');
+        item.textContent = li.textContent;
+        ul.appendChild(item);
+    });
+    educationDiv.appendChild(ul);
+    educationContainer.appendChild(educationDiv);
+
+    eduDetails.forEach((li) => {
+        li.remove();
+    });
+
+    // Clear inputs
+    InputsUI.eduDegree.value = '';
+    InputsUI.eduUniversity.value = '';
+    InputsUI.eduLocation.value = '';
+    InputsUI.eduStartDate.value = '';
+    InputsUI.eduEndDate.value = '';
+}
+
+
+
 InputsUI.fullName.addEventListener('input' , () => {
     Update_UI(UIElements.userName, InputsUI.fullName);
 });
@@ -216,4 +285,9 @@ AddExceperience();
 });
 Buttons.addDetailJobBtn.addEventListener('click',() => {
     AddDetalisList('ulJobDetailsList' , 'JobDetail', InputsUI.jobDetails.value.trim());
+});
+Buttons.addEducationBtn.addEventListener('click', AddEducation);
+
+Buttons.addEduDetailBtn.addEventListener('click',() => {
+    AddDetalisList('ulEduDetailsList' , 'EduDetail', InputsUI.eduDetails.value.trim());
 });

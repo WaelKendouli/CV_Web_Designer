@@ -164,48 +164,31 @@
   </div>
 </div>
 
-            <div class="Container">
-              <p class="Title">Education</p><br/>
-<label>Degree :</label>
-          <input
-            id="serial"
-            placeholder="Type your degree ..."
-            autocomplete="off"
-          />
-          <label >University :</label>
-          <input
-            id="serial"
-            placeholder="Type your university name ..."
-            autocomplete="off"
-          />
-          <label >Location :</label>
-          <input
-            id="serial"
-            placeholder="Type your location ..."
-            autocomplete="off"
-          />
-          <label >From :</label>
-          <input
-            id="serial"
-            placeholder="Type your start date ..."
-            autocomplete="off"
-          />
-          <label >To :</label>
-          <input
-            id="serial"
-            placeholder="Type your end date ..."
-            autocomplete="off"
-          />
-          <label >Details :</label>
-          <input
-            id="serial"
-            placeholder="Type your job details ..."
-            autocomplete="off"
-          />
-          <div class="Button_Container">
-            <button >+ Add Detail</button>
-          </div>
-            </div>
+          <div class="Container">
+  <p class="Title">Education</p><br/>
+  <label>Degree :</label>
+  <input id="eduDegree" placeholder="Type your degree ..." autocomplete="off"/>
+  
+  <label>University :</label>
+  <input id="eduUniversity" placeholder="Type your university name ..." autocomplete="off"/>
+  
+  <label>Location :</label>
+  <input id="eduLocation" placeholder="Type your location ..." autocomplete="off"/>
+  
+  <label>From :</label>
+  <input id="eduStartDate" placeholder="Type your start date ..." autocomplete="off" type="date"/>
+  
+  <label>To :</label>
+  <input id="eduEndDate" placeholder="Type your end date ..." autocomplete="off" type="date"/>
+  
+  <label>Details :</label>
+  <textarea id="eduDetails" placeholder="Type your education details ..." autocomplete="off"></textarea>
+  <ul id="ulEduDetailsList"></ul>
+  <div class="Button_Container">
+    <button id="addEduDetailBtn">+ Add Detail</button>
+    <button id="addEducationBtn">+ Add Education</button>
+  </div>
+</div>
 
 <div class="Container">
               <p class="Title">Certifications</p>
@@ -370,22 +353,10 @@
                     </div>
                   </div>
 
-                  <div class="Main_Section">
-                    <h2>Education</h2>
-                    <div class="Section">
-                      <div class="SectionTitle">
-                      <p>B.Sc. in Computer Science</p>
-                      <span class="Muted">
-                      <p>Ferhat Abbas University | setif</p>
-                      <p>2025</p>
-                      </span>
-                      </div>
-                      <ul>
-                        <li>Graduated with Honors. Coursework: Data Structures, HCI, Databases.</li>
-                        </ul>
-                    </div>
-                   
-                  </div>
+                  <div id="educationContainer" class="Main_Section">
+    <h2>Education</h2>
+</div>
+
 
                   <div class="Main_Section">
                     <h2>Certifications</h2>
