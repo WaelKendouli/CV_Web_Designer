@@ -110,48 +110,59 @@
             </div>
 
             <div class="Container">
-              <p class="Title">Experience</p><br/>
-<label>Job Title :</label>
-          <input
-            id="serial"
-            placeholder="Type your job title ..."
-            autocomplete="off"
-          />
-          <label >Company :</label>
-          <input
-            id="serial"
-            placeholder="Type your company name ..."
-            autocomplete="off"
-          />
-          <label >Location :</label>
-          <input
-            id="serial"
-            placeholder="Type your location ..."
-            autocomplete="off"
-          />
-          <label >From :</label>
-          <input
-            id="serial"
-            placeholder="Type your start date ..."
-            autocomplete="off"
-          />
-          <label >To :</label>
-          <input
-            id="serial"
-            placeholder="Type your end date ..."
-            autocomplete="off"
-          />
-          <label >Details :</label>
-          <input
-            id="serial"
-            placeholder="Type your job details ..."
-            autocomplete="off"
-          />
-          <div class="Button_Container">
-            <button >+ Add Detail</button>
-            <button >+ Add Experience</button>
-          </div>
-            </div>
+  <p class="Title">Experience</p><br/>
+  
+  <label>Job Title :</label>
+  <input
+    id="jobTitle"
+    placeholder="Type your job title ..."
+    autocomplete="off"
+  />
+  
+  <label>Company :</label>
+  <input
+    id="company"
+    placeholder="Type your company name ..."
+    autocomplete="off"
+  />
+  
+  <label>Location :</label>
+  <input
+    id="location"
+    placeholder="Type your location ..."
+    autocomplete="off"
+  />
+  
+  <label>From :</label>
+  <input
+    id="startDate"
+    placeholder="Type your start date ..."
+    autocomplete="off"
+    type="date"
+  />
+  
+  <label>To :</label>
+  <input
+    id="endDate"
+    placeholder="Type your end date ..."
+    autocomplete="off"
+    type="date"
+  />
+  
+  <label>Details :</label>
+  <textarea
+    id="jobDetails"
+    placeholder="Type your job details ..."
+    autocomplete="off"
+  ></textarea>
+  <ul id="ulJobDetailsList">
+                      
+                    </ul>
+  <div class="Button_Container">
+    <button id="addDetailBtn">+ Add Detail</button>
+    <button id="addExperienceBtn">+ Add Experience</button>
+  </div>
+</div>
 
             <div class="Container">
               <p class="Title">Education</p><br/>
@@ -325,37 +336,10 @@
                   </div>
                 </div>
                 <div class="Details">
-                  <div class="Main_Section">
+                  <div id="experienceContainer" class="Main_Section">
                     <h2>Experience</h2>
-                    <div class="Section">
-                      <div class="SectionTitle">
-                      <p>Front-End Developer</p>
-                      <span class="Muted">
-                      <p>Company Name</p>
-                      <p>2022</p>
-                      </span>
-                      </div>
-                      <ul>
-                        <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
-                        <li>UI / UX Design</li>
-                        <li>Solid understanding of responsive design principles.</li>
-                        </ul>
-                    </div>
-                    <div class="Section">
-                      <div class="SectionTitle">
-                      <p>Back-End Developer</p>
-                      <span class="Muted">
-                      <p>Company Name</p>
-                      <p>2023 - 2025</p>
-                      </span>
-                      </div>
-                      <ul>
-                        <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
-                        <li>UI / UX Design</li>
-                        <li>Solid Principal.</li>
-                        </ul>
-                    </div>
                   </div>
+
                   <div class="Main_Section">
                     <h2>Selected Projects</h2>
                     <div class="Section">

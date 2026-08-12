@@ -12,7 +12,14 @@ const InputsUI = {
  Skills : document.getElementById('InpSkills'),
  TechTools : document.getElementById('InpTechTools'),
  ddLanguageLevel : document.getElementById('Leveldropdown'),
- Language : document.getElementById('InpLanguage')
+ Language : document.getElementById('InpLanguage'),
+
+ jobTitle: document.getElementById('jobTitle'),
+  company: document.getElementById('company'),
+  location: document.getElementById('location'),
+  startDate: document.getElementById('startDate'),
+  endDate: document.getElementById('endDate'),
+jobDetails : document.getElementById('jobDetails')
 }
 
 
@@ -32,12 +39,16 @@ elTechTools : document.getElementById('elTechToolsList'),
 elSkills : document.getElementById('elSkillsList'),
 elLanguages : document.getElementById('languagesList'),
 LangProtoText : document.getElementById('elProtoMessage')
+
 }
 
 const Buttons = {
     btnaddSkill : document.getElementById('btnAddSkill'),
     btnaddLanguage : document.getElementById('btnAddLanguage'),
-    btnaddTechTool : document.getElementById('btnAddTechTool')
+    btnaddTechTool : document.getElementById('btnAddTechTool'),
+    addExperienceBtn : document.getElementById('addExperienceBtn'),
+    addDetailJobBtn : document.getElementById('addDetailBtn')
+
 }
 
 function Update_UI(element , input)
@@ -100,6 +111,70 @@ listLanguage.appendChild(item);
 inputElement.value = '';
 }
 
+
+function AddExceperience()
+{
+     const jobTitle = InputsUI.jobTitle.value.trim();
+  const company = InputsUI.company.value.trim();
+  const location = InputsUI.location.value.trim();
+  const startDate = InputsUI.startDate.value.trim();
+  const endDate = InputsUI.endDate.value.trim();
+    const ExecperienceSect = document.getElementById('experienceContainer');
+
+  const experienceDiv = document.createElement('div');
+experienceDiv.className = 'Section';
+const TitleSect = document.createElement('div');
+TitleSect.className = 'SectionTitle';
+const Title = document.createElement('p');
+Title.textContent = jobTitle;
+const spnInfos = document.createElement('span');
+spnInfos.className = 'Muted';
+const Company = document.createElement('p');
+Company.textContent = company;
+const Location = document.createElement('p');
+Location.textContent = location;
+const Period = document.createElement('p');
+Period.textContent = `from ${startDate} to ${endDate}`;
+spnInfos.appendChild(Company);
+spnInfos.appendChild(Location);
+spnInfos.appendChild(Period);
+
+TitleSect.appendChild(Title);
+TitleSect.appendChild(spnInfos);
+
+experienceDiv.appendChild(TitleSect);
+
+/*InputsUI.jobTitle.value = '';
+InputsUI.company.value = '';
+InputsUI.location.value = '';*/
+
+const JobDetails = document.querySelectorAll('.JobDetail');
+const ul = document.createElement('ul');
+JobDetails.forEach((li) => {
+    let item = document.createElement('li');
+    item.textContent = li.textContent;
+    ul.appendChild(item);
+});
+experienceDiv.appendChild(ul);
+ExecperienceSect.appendChild(experienceDiv);
+
+JobDetails.forEach((li) => {
+    li.remove();
+});
+
+}
+
+function AddDetalisList(Ul_id , Li_class , value)
+{
+    const ul = document.getElementById(Ul_id);
+    const li = document.createElement('li');
+        li.addEventListener('click' , function(){ this.remove()});
+
+li.className = Li_class;
+li.textContent = value;
+ul.appendChild(li);
+}
+
 InputsUI.fullName.addEventListener('input' , () => {
     Update_UI(UIElements.userName, InputsUI.fullName);
 });
@@ -135,4 +210,10 @@ Buttons.btnaddTechTool.addEventListener('click', () => {
 });
 Buttons.btnaddLanguage.addEventListener('click', () => {
     AddLanguage(UIElements.elLanguages, InputsUI.Language, InputsUI.ddLanguageLevel);
+});
+Buttons.addExperienceBtn.addEventListener('click' , () => {
+AddExceperience();
+});
+Buttons.addDetailJobBtn.addEventListener('click',() => {
+    AddDetalisList('ulJobDetailsList' , 'JobDetail', InputsUI.jobDetails.value.trim());
 });
